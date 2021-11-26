@@ -1,0 +1,12 @@
+.link-log-out {
+    position: absolute;
+    color: #000;
+    top: 0.5rem;
+    left: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.link-log-out:hover {
+    color: #d00;
+    text-decoration: none;
+}
