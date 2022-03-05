@@ -15,16 +15,16 @@ export default function Home() {
 
 	const [averageHeightWidth, setAverageHeightWidth] = useState({});
 
-	const navigate = useNavigate();
-	useEffect(() => {
-		if (
-			!localStorage.getItem('token') &&
-			window.location.pathname !== '/login'
-		) {
-			alert('Please, login before you continue');
-			navigate('/login');
-		}
-	}, [navigate]);
+	// const navigate = useNavigate();
+	// useEffect(() => {
+	// 	if (
+	// 		!localStorage.getItem('token') &&
+	// 		window.location.pathname !== '/login'
+	// 	) {
+	// 		alert('Please, login before you continue');
+	// 		navigate('/login');
+	// 	}
+	// }, [navigate]);
 
 	//Traer los datos del localStorage y agregarlos a la variable de estado heroes
 	useEffect(() => {

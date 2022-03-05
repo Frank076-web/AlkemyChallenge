@@ -13,16 +13,16 @@ export default function SearchHero() {
 	const [valuesForm, setValuesForm] = useState();
 	const [heroes, setHeroes] = useState();
 
-	const navigate = useNavigate();
-	useEffect(() => {
-		if (
-			!localStorage.getItem('token') &&
-			window.location.pathname !== '/login'
-		) {
-			alert('Please, login before you continue');
-			navigate('/login');
-		}
-	}, [navigate]);
+	// const navigate = useNavigate();
+	// useEffect(() => {
+	// 	if (
+	// 		!localStorage.getItem('token') &&
+	// 		window.location.pathname !== '/login'
+	// 	) {
+	// 		alert('Please, login before you continue');
+	// 		navigate('/login');
+	// 	}
+	// }, [navigate]);
 
 	const formik = useFormik({
 		initialValues: {
