@@ -6,7 +6,7 @@ import HeroCard from './HeroCard';
 import './Search.css';
 import LogOut from '../logOut/LogOut';
 import '../logOut/LogOut.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function SearchHero() {
 	//Manejo del formulario
