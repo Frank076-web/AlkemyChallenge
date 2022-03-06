@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+	const navigate = useNavigate();
 	//Una vez logueado, si el usuario intenta volver a la pagina de login, se redirecciona a la pagina principal
 	useEffect(() => {
 		if (localStorage.getItem('token')) {
 			alert('Atención ya estás logueado, redirigiendo al home');
-			window.location.href = '/';
+			navigate('/');
 		}
-	}, []);
+	}, [navigate]);
 
 	const [values, setValues] = useState();
 	const [isTryingToLogin, setIsTryingToLogin] = useState(false);
@@ -59,7 +61,7 @@ export default function Login() {
 							encodeURIComponent(true) +
 							';' +
 							'expires=0';
-						window.location.href = '/';
+						navigate('/');
 					}
 				}
 			} catch (error) {
@@ -67,7 +69,7 @@ export default function Login() {
 			}
 		};
 		getToken();
-	}, [values, isTryingToLogin]);
+	}, [values, isTryingToLogin, navigate]);
 
 	return (
 		<>

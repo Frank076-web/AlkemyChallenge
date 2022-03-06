@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function LogOut() {
-    const logOut = () => {
-        localStorage.removeItem('token');
-    };
+	const logOut = () => {
+		localStorage.removeItem('token');
+	};
 
-    return (
-        <a href="/login" className="link-log-out" onClick={logOut}>
-            LogOut
-        </a>
-    );
+	return (
+		<Link to="/login" className="link-log-out" onClick={logOut}>
+			LogOut
+		</Link>
+	);
 }

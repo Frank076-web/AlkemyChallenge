@@ -4,6 +4,7 @@ import HeroCard from './HeroCard';
 import './Home.css';
 import LogOut from '../logOut/LogOut';
 import '../logOut/LogOut.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Home() {
 	const [heroId, setHeroId] = useState([]);
@@ -13,6 +14,17 @@ export default function Home() {
 	const [totalStates, setTotalStates] = useState({});
 
 	const [averageHeightWidth, setAverageHeightWidth] = useState({});
+
+	const navigate = useNavigate();
+	useEffect(() => {
+		if (
+			!localStorage.getItem('token') &&
+			window.location.pathname !== '/login'
+		) {
+			alert('Please, login before you continue');
+			navigate('/login');
+		}
+	}, [navigate]);
 
 	//Traer los datos del localStorage y agregarlos a la variable de estado heroes
 	useEffect(() => {
@@ -95,9 +107,9 @@ export default function Home() {
 		<>
 			<div className="box-status-total">
 				<h1 className="team-title">SuperHeroes Team</h1>
-				<a href="/search" className="link-search-hero">
+				<Link to="/search" className="link-search-hero">
 					Search
-				</a>
+				</Link>
 				<LogOut />
 			</div>
 			<div
